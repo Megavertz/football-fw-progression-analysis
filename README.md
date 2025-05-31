@@ -1,112 +1,77 @@
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "id": "47d532d9-9de9-41ef-bdf3-f3963b0429f0",
-   "metadata": {},
-   "source": [
-    "# Football Data Analysis: Progressive Actions per 90 Minutes\n",
-    "\n",
-    "In this project, the performance of football players is analyzed with a focus on progressive carries and passes per 90 minutes for forwards. Data has been scraped from [FBref](https://fbref.com), stored in a PostgreSQL database, and visualized using Python with Matplotlib and Seaborn.\n",
-    "\n",
-    "# Project Overview\n",
-    "\n",
-    "Comparisons are made between forwards based on:\n",
-    "\n",
-    "- **Progressive Carries per 90 minutes**\n",
-    "- **Progressive Passes per 90 minutes**\n",
-    "\n",
-    "By normalizing for playing time, a fair comparison between players with varying minutes played is ensured.\n",
-    "\n",
-    "# Tech Stack\n",
-    "\n",
-    "- Python 3.12\n",
-    "- Libraries: `pandas`, `matplotlib`, `seaborn`, `sqlalchemy`, `psycopg2`, `python-dotenv`\n",
-    "- PostgreSQL\n",
-    "- Jupyter Notebook\n",
-    "\n",
-    "# Project Structure\n",
-    "\n",
-    "football-data-analysis/\n",
-    "│\n",
-    "├── .env # Environment variables (excluded from GitHub)\n",
-    "├── .gitignore # Used to ignore files like .env and venv/\n",
-    "├── football_analysis.ipynb # Main notebook where analysis is performed\n",
-    "├── README.md # This file\n",
-    "├── requirements.txt # Python dependencies are listed here\n",
-    "└── venv/ # Virtual environment (not committed)\n",
-    "\n",
-    "# Environment Variables\n",
-    "\n",
-    "Database credentials are stored in a `.env` file and are loaded using `python-dotenv`. This ensures that sensitive information is not exposed.\n",
-    "\n",
-    "The `.env` file should contain:\n",
-    "\n",
-    "```bash\n",
-    "DB_USER=your_db_user\n",
-    "DB_PASS=your_db_password\n",
-    "DB_HOST=localhost\n",
-    "DB_PORT=5432\n",
-    "DB_NAME=football_data\n",
-    "\n",
-    "To load them in code:\n",
-    "\n",
-    "from dotenv import load_dotenv\n",
-    "load_dotenv()"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "b6436a20-8a71-4900-adec-d4b9bd196d13",
-   "metadata": {},
-   "source": [
-    "# Sample Visualization\n",
-    "\n",
-    "A scatter plot has been created to compare players based on their progressive passes and carries per 90 minutes. Each data point has been labeled with the corresponding player's name.\n",
-    "\n",
-    "How to Run:\n",
-    "\n",
-    "1. The repository should be cloned:\n",
-    "\n",
-    "git clone https://github.com/yourusername/football-data-analysis.git\n",
-    "cd football-data-analysis\n",
-    "\n",
-    "2. A virtual environment should be created and activated:\n",
-    "\n",
-    "python -m venv venv\n",
-    "source venv/bin/activate  # On Windows: venv\\Scripts\\activate\n",
-    "\n",
-    "3. Dependencies should be installed:\n",
-    "\n",
-    "pip install -r requirements.txt\n",
-    "\n",
-    "4. A .env file should be created and filled with database credentials.\n",
-    "\n",
-    "5. The notebook can then be opened:\n",
-    "\n",
-    "jupyter notebook football_analysis.ipynb"
-   ]
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.12.3"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+# Football Data Analysis: Progressive Actions per 90 Minutes
+
+In this project, the performance of football players is analyzed with a focus on progressive carries and passes per 90 minutes for forwards. Data has been scraped from [FBref](https://fbref.com), stored in a PostgreSQL database, and visualized using Python with Matplotlib and Seaborn.
+
+# Project Overview
+
+Comparisons are made between forwards based on:
+
+- **Progressive Carries per 90 minutes**
+- **Progressive Passes per 90 minutes**
+
+By normalizing for playing time, a fair comparison between players with varying minutes played is ensured.
+
+# Tech Stack
+
+- Python 3.12
+- Libraries: `pandas`, `matplotlib`, `seaborn`, `sqlalchemy`, `psycopg2`, `python-dotenv`
+- PostgreSQL
+- Jupyter Notebook
+
+# Project Structure
+```bash
+football-data-analysis/
+│
+├── .env # Environment variables (excluded from GitHub)
+├── .gitignore # Used to ignore files like .env and venv/
+├── football_analysis.ipynb # Main notebook where analysis is performed
+├── README.md # This file
+├── requirements.txt # Python dependencies are listed here
+└── venv/ # Virtual environment (not committed)
+```
+# Environment Variables
+
+Database credentials are stored in a `.env` file and are loaded using `python-dotenv`. This ensures that sensitive information is not exposed.
+
+The `.env` file should contain:
+
+```bash
+DB_USER=your_db_user
+DB_PASS=your_db_password
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=football_data
+```
+To load them in code:
+
+```bash
+from dotenv import load_dotenv
+load_dotenv()
+```
+# Sample Visualization
+
+A scatter plot has been created to compare players based on their progressive passes and carries per 90 minutes. Each data point has been labeled with the corresponding player's name.
+
+How to Run:
+
+1. The repository should be cloned:
+
+```bash
+git clone https://github.com/yourusername/football-data-analysis.git\n",
+cd football-data-analysis
+```
+2. A virtual environment should be created and activated:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\\Scripts\\activate
+```
+3. Dependencies should be installed:
+```bash
+pip install -r requirements.txt\n",
+```
+4. A .env file should be created and filled with database credentials.
+
+5. The notebook can then be opened:
+```bash
+jupyter notebook football_analysis.ipynb
+```
