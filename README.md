@@ -1,6 +1,6 @@
 # Football Data Analysis: Progressive Actions per 90 Minutes
 
-In this project, the performance of football players is analyzed with a focus on progressive carries and passes per 90 minutes for forwards. Data has been scraped from [FBref](https://fbref.com), stored in a PostgreSQL database, and visualized using Python with Matplotlib and Seaborn.
+In this project, the performance of football players playing in the Premier League during the 2024-2025 season were analyzed with a focus on progressive carries and passes per 90 minutes for forwards. Data has been scraped from [FBref](https://fbref.com), stored in a PostgreSQL database, and visualized using Python with Matplotlib and Seaborn.
 
 # Project Overview
 
